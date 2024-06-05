@@ -47,7 +47,7 @@ def model_summary():
     model_summary = "\n".join(summary)
 
     # Plot accuracy
-    history = pd.read_csv('history.csv')
+    history = pd.read_csv('Datasets/history.csv')
     plt.plot(history['accuracy'])
     plt.plot(history['val_accuracy'])
     plt.title('Model Accuracy')
