@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Model Summary and Predictions</title>
+    <style>
+        body {
+            padding-top: 30px;
+        }
+        .container {
+            max-width: 800px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .form-group input {
+            max-width: 300px;
+        }
+        .explanation {
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">Model Summary and Predictions</h1>
+        
+        <h2 class="mb-3">Model Summary</h2>
+        <pre>{{ model_summary }}</pre>
+        
+        <h2 class="mb-3">Model Accuracy</h2>
+        <img src="{{ url_for('static', filename='accuracy.png') }}" class="img-fluid mb-3" alt="Accuracy Graph">
+        
+        <h2 class="mb-3">Model Loss</h2>
+        <img src="{{ url_for('static', filename='loss.png') }}" class="img-fluid mb-3" alt="Loss Graph">
+        
+        <h2 class="mb-3">Predict New Data</h2>
+        <p class="explanation">
+            Masukkan nilai-nilai fitur di bawah ini untuk mendapatkan prediksi. Pastikan nilai yang dimasukkan sesuai dengan format yang diharapkan.
+        </p>
+        <form action="{{ url_for('predict') }}" method="post">
+            {% for col in columns %}
+            <div class="form-group">
+                <label for="{{ col }}">{{ col }}</label>
+                <input type="text" id="{{ col }}" name="{{ col }}" class="form-control" placeholder="Enter value for {{ col }}">
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

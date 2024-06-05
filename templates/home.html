@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Home</title>
+    <style>
+        body {
+            padding-top: 30px;
+        }
+        .container {
+            max-width: 800px;
+        }
+        .content {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h1 class="mb-4">Machine Learning Predictive Maintenance for Air Compressor</h1>
+        <div class="content">
+            <p>
+                <strong>Machine Learning Predictive Maintenance</strong> adalah pendekatan modern untuk pemeliharaan prediktif menggunakan algoritma pembelajaran mesin untuk memprediksi kapan sebuah mesin atau komponen akan mengalami kegagalan. Dengan menggunakan data historis dari operasi mesin, model pembelajaran mesin dapat memprediksi waktu kegagalan dan memberikan peringatan sebelumnya sehingga pemeliharaan dapat dilakukan secara proaktif, mengurangi waktu henti dan biaya perbaikan.
+            </p>
+            <p>
+                <strong>Air Compressor</strong> adalah perangkat yang mengubah daya (menggunakan motor listrik, diesel atau mesin bensin, dll.) menjadi energi potensial yang tersimpan dalam udara bertekanan. Dengan menggunakan pendekatan pemeliharaan prediktif berbasis pembelajaran mesin, kita dapat memastikan bahwa air compressor beroperasi secara optimal dan menghindari kegagalan mendadak yang dapat menyebabkan kerugian operasional.
+            </p>
+        </div>
+        <a href="{{ url_for('model_summary') }}" class="btn btn-primary btn-lg mb-3">View Model Summary</a>
+        <br>
+        <a href="{{ url_for('predict') }}" class="btn btn-secondary btn-lg mb-3">Predict New Data</a>
+    </div>
+</body>
+</html>
