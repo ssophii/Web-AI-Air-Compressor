@@ -1,4 +1,4 @@
-lask==3.0.3
+flask==3.0.3
 fonttools==4.53.0
 keras==3.3.3
 matplotlib==3.9.0
